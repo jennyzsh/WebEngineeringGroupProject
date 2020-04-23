@@ -119,14 +119,17 @@ router.get('/manage_post',async (ctx,nect)=>{
     if(!user){
         ctx.redirect('/signin')
     }else{
-        if(ctx.query != null) {
-            let { id } = ctx.query;
+        // if(ctx.query != null) {
+        //     let { id } = ctx.query;
+
+        let { id } = ctx.query;
+        if (id) {
             let post_res = await retrievePost_forEdit(id);
             let post = post_res.data;
 
             await ctx.render('manage_post',{current:7,user,post})
         } else {
-            await ctx.render('manage_post',{current:7,user})
+            await ctx.render('manage_post',{current:7,user,post: undefined})
         }
     }
 });
