@@ -316,9 +316,10 @@ async function getPictures(postId){
             attributes:['id', 'url', 'userId', 'postId']
         });
         if(!pictures) return null;
-        for (picture of pictures) {
-            pictures_arr.push(picture.dataValues)
-        }
+        pictures_arr.push(pictures[pictures.length-1].dataValues);
+        // for (picture of pictures) {
+        //     pictures_arr.push(picture.dataValues)
+        // }
         return pictures_arr;
     }catch(e){
         console.log(e);
