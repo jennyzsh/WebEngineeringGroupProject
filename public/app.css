@@ -59,6 +59,7 @@ body{
     background-color: #343a40!important;
     color: #fff;
     padding: 20px;
+    z-index: 1000;
 }
 
 .explore-frame{

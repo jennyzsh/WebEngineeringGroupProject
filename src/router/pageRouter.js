@@ -63,7 +63,7 @@ router.get('/explore',async (ctx, next)=>{
         let posts_res = await retrievePostsByDestination(query);
         posts = posts_res.data?posts_res.data:[];
 
-        console.log(posts)
+        // console.log(posts)
         let weatherApi = 'http://api.weatherapi.com/v1/current.json?key=8da9b490cc334d63b03151247201804&q=' + query;
         let weather_res = await getApi(weatherApi);
 
